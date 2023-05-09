@@ -1,33 +1,30 @@
+from django.contrib.auth.tokens import default_token_generator
+from django.core.mail import send_mail
 from django.db.models import Avg
+from django.http import QueryDict
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, status
-from rest_framework.pagination import PageNumberPagination
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
-from rest_framework.response import Response
-from rest_framework.viewsets import ModelViewSet
 from rest_framework.decorators import action, permission_classes
-from rest_framework.permissions import AllowAny, IsAuthenticated
-from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import (AllowAny, IsAuthenticated,
+                                        IsAuthenticatedOrReadOnly)
+from rest_framework.response import Response
 from rest_framework.views import APIView
-
-from .permissions import (IsAdminOrReadOnly,
-                          IsAuthorModeratorAdminSuperuser, IsAdmin)
+from rest_framework.viewsets import ModelViewSet
+from rest_framework_simplejwt.tokens import RefreshToken
 
 from reviews.models import Category, Comment, Genre, Review, Title, User
-from .mixins import ListCreateDestroyMixin
 
 from .filters import TitleFilters
-from .serializers import (CategorySerializer, CommentSerializer,
-                          GenreSerializer, ReviewsSerializer,
-                          SafeMethodTitleSerializer, TitleSerializer,
-                          AdminUserSerializer, SignupSerializer,
-                          TokenSerializer, UserSerializer)
-
-
-from django.contrib.auth.tokens import default_token_generator
-from django.core.mail import send_mail
-from django.http import QueryDict
+from .mixins import ListCreateDestroyMixin
+from .permissions import (IsAdmin, IsAdminOrReadOnly,
+                          IsAuthorModeratorAdminSuperuser)
+from .serializers import (AdminUserSerializer, CategorySerializer,
+                          CommentSerializer, GenreSerializer,
+                          ReviewsSerializer, SafeMethodTitleSerializer,
+                          SignupSerializer, TitleSerializer, TokenSerializer,
+                          UserSerializer)
 
 
 class AbstractViewSet(ListCreateDestroyMixin):
