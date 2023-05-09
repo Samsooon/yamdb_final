@@ -20,7 +20,7 @@ jobs:
         pip install flake8 pep8-naming flake8-broken-line flake8-return flake8-isort
         pip install -r requirements.txt
 
-    -name: Test with flake8 / pytest
+    - name: Test with flake8 / pytest
       run: |
         python -m flake8
         pytest
