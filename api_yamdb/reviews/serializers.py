@@ -1,11 +1,9 @@
 import re
-
 from api_yamdb.settings import RATING_SCORE
 from django.core.exceptions import ValidationError
 from django.core.validators import MaxValueValidator, MinValueValidator
 from rest_framework import serializers
 from rest_framework.response import Response
-
 from reviews.models import Category, Comment, Genre, Review, Title, User
 
 

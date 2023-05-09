@@ -3,7 +3,7 @@ import csv
 from django.core.management.base import BaseCommand, CommandError
 from django.db import IntegrityError, OperationalError
 
-from ratings.models import (Category, Comment, Genre, Reviews, Title,
+from reviews.models import (Category, Comment, Genre, Reviews, Title,
                             GenreTitle, User)
 
 TABLE_MODEL = {
