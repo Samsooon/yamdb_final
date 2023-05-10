@@ -10,7 +10,7 @@ services:
       - ./.env
 
   web:
-    image: dsamsooon/api_yamdb:v1
+    image: dsamsooon/api_yamdb:latestgi
     build: 
       context: ../api_yamdb/
       dockerfile: Dockerfile
