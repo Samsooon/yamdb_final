@@ -45,9 +45,9 @@ jobs:
       - name: Push to DockerHub
         uses: docker/build-push-action@v2
         with:
-          context: api_yamdb
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_final:v1
+          tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_final:latest
+          context: ./api_yamdb/
 
   deploy:
     runs-on: ubuntu-latest
