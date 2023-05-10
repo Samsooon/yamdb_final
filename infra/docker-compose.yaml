@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.3'
 
 services:
   db:
@@ -10,7 +10,7 @@ services:
       - ./.env
 
   web:
-    image: dsamsooon/api_yamdb:latestgi
+    image: dsamsooon/api_yamdb:latest
     build: 
       context: ../api_yamdb/
       dockerfile: Dockerfile
