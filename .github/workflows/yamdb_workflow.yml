@@ -74,6 +74,7 @@ jobs:
             sudo docker-compose exec -it web python manage.py collectstatic --no-input
             sudo docker-compose exec -it web python manage.py makemigrations
             sudo docker-compose exec -it web python manage.py migrate
+            y
 
 
   send_message:
