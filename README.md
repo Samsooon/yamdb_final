@@ -4,7 +4,7 @@ yamdb_final
 ![MyWorkFlow](https://github.com/Samsooon/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 Доступно на:
-158.160.52.147
+158.160.50.178
 
 # Описание
 
