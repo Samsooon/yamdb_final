@@ -75,6 +75,7 @@ jobs:
             sudo docker-compose exec -it web python manage.py makemigrations
             sudo docker-compose exec -it web python manage.py migrate
 
+
   send_message:
     runs-on: ubuntu-latest
     needs: deploy
